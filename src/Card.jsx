@@ -41,7 +41,8 @@ const handleLikeUnClick = () => {
         }} >
             <img src={item.image} alt='my images'  style={{
                 objectFit:"fill",
-                height:100
+                height:100,
+                marginTop:10,
             }} />
         
 
@@ -81,15 +82,12 @@ const handleLikeUnClick = () => {
         }} >
         <button style={{
            border:"none",
-           
-           
-           
         }}  onDoubleClick={()=>{
-            setUnclick(true)
-            setClicked(false)
+            setUnclick(false)
+            setClicked(true)
             handleLikeClick()
         }} >
-        <FontAwesomeIcon icon={faHeart} style={clicked?{
+        <FontAwesomeIcon icon={faHeart} style={clicked===false?{
             borderColor:"#1e8ee1",
             height:30,
             
@@ -108,7 +106,7 @@ const handleLikeUnClick = () => {
         }}>likes</p>
 
         <button onClick={()=>{
-            setClicked(true)
+            setClicked(false)
             setUnclick(false)
             handleLikeUnClick()
         }} >
@@ -144,7 +142,7 @@ const handleLikeUnClick = () => {
         display:"flex",
         flexDirectionL:"row",
         marginTop:5,
-        marginBottom:5,
+        marginBottom:10,
        }} >
        <button style={{
        
